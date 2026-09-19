@@ -1,0 +1,2337 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>For Shree 🤍</title>
+
+<style>
+
+/* =====================================================
+   RESET
+===================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,
+body{
+    width:100%;
+    height:100%;
+    overflow:hidden;
+}
+
+
+/* =====================================================
+   BODY
+===================================================== */
+
+body{
+
+    font-family:
+        "Trebuchet MS",
+        Arial,
+        sans-serif;
+
+    color:white;
+
+    background:
+        radial-gradient(
+            circle at 15% 10%,
+            rgba(132,67,181,.38),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 85% 85%,
+            rgba(174,72,190,.25),
+            transparent 32%
+        ),
+
+        linear-gradient(
+            135deg,
+            #0a0610,
+            #1d0e29,
+            #09050e
+        );
+
+}
+
+
+/* =====================================================
+   APP
+===================================================== */
+
+#app{
+
+    width:100%;
+    height:100vh;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+
+/* =====================================================
+   PAGE
+===================================================== */
+
+.page{
+
+    position:absolute;
+
+    inset:0;
+
+    width:100%;
+    height:100%;
+
+    display:none;
+
+    align-items:center;
+    justify-content:center;
+
+    padding:15px;
+
+}
+
+
+.page.active{
+
+    display:flex;
+
+    animation:
+        pageIn
+        .65s
+        ease;
+
+}
+
+
+@keyframes pageIn{
+
+    from{
+
+        opacity:0;
+
+        transform:
+            translateY(18px)
+            scale(.95);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+    }
+
+}
+
+
+/* =====================================================
+   CARD
+===================================================== */
+
+.card{
+
+    width:
+        min(
+            850px,
+            95vw
+        );
+
+    max-height:92vh;
+
+    overflow-y:auto;
+
+    padding:
+        32px
+        27px;
+
+    text-align:center;
+
+    border-radius:30px;
+
+    background:
+        rgba(255,255,255,.055);
+
+    border:
+        1px solid
+        rgba(255,255,255,.15);
+
+    box-shadow:
+
+        0 0 50px
+        rgba(184,83,255,.16),
+
+        inset 0 0 30px
+        rgba(255,255,255,.02);
+
+    backdrop-filter:blur(10px);
+
+}
+
+
+.card::-webkit-scrollbar{
+    width:4px;
+}
+
+
+.card::-webkit-scrollbar-thumb{
+
+    background:#c96bff;
+
+    border-radius:20px;
+
+}
+
+
+/* =====================================================
+   TEXT
+===================================================== */
+
+.small{
+
+    font-size:12px;
+
+    letter-spacing:4px;
+
+    text-transform:uppercase;
+
+    opacity:.68;
+
+    margin-bottom:16px;
+
+}
+
+
+h1{
+
+    font-size:
+        clamp(
+            45px,
+            9vw,
+            85px
+        );
+
+    line-height:1;
+
+    margin-bottom:23px;
+
+}
+
+
+h2{
+
+    font-size:
+        clamp(
+            29px,
+            6vw,
+            48px
+        );
+
+    line-height:1.18;
+
+    margin-bottom:20px;
+
+}
+
+
+p{
+
+    font-size:18px;
+
+    line-height:1.7;
+
+}
+
+
+.purple{
+    color:#d48cff;
+}
+
+
+.pink{
+    color:#ffb6e8;
+}
+
+
+.glow{
+
+    text-shadow:
+
+        0 0 10px
+        rgba(221,145,255,.85),
+
+        0 0 30px
+        rgba(221,145,255,.4);
+
+}
+
+
+/* =====================================================
+   QUESTION BADGE
+===================================================== */
+
+.questionNumber{
+
+    display:inline-block;
+
+    padding:
+        8px
+        17px;
+
+    border-radius:30px;
+
+    background:
+        rgba(255,255,255,.08);
+
+    border:
+        1px solid
+        rgba(255,255,255,.10);
+
+    font-size:12px;
+
+    letter-spacing:2px;
+
+    margin-bottom:20px;
+
+}
+
+
+/* =====================================================
+   QUESTION
+===================================================== */
+
+.question{
+
+    font-size:
+        clamp(
+            27px,
+            5vw,
+            44px
+        );
+
+    font-weight:bold;
+
+    line-height:1.3;
+
+    margin-bottom:32px;
+
+}
+
+
+/* =====================================================
+   BUTTONS
+===================================================== */
+
+button{
+
+    font-family:inherit;
+
+    border:none;
+
+    cursor:pointer;
+
+}
+
+
+.startBtn,
+.nextBtn,
+.yesBtn{
+
+    padding:
+        14px
+        27px;
+
+    border-radius:50px;
+
+    color:white;
+
+    font-size:16px;
+
+    font-weight:bold;
+
+    background:
+        linear-gradient(
+            135deg,
+            #a33ef5,
+            #db69f9
+        );
+
+    box-shadow:
+        0 8px 25px
+        rgba(190,70,255,.35);
+
+    transition:.25s;
+
+}
+
+
+.startBtn:hover,
+.nextBtn:hover,
+.yesBtn:hover{
+
+    transform:
+        translateY(-4px)
+        scale(1.04);
+
+    box-shadow:
+        0 12px 33px
+        rgba(202,81,255,.52);
+
+}
+
+
+/* =====================================================
+   YES / NO
+===================================================== */
+
+.buttons{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:24px;
+
+    min-height:85px;
+
+    position:relative;
+
+}
+
+
+.noBtn{
+
+    padding:
+        14px
+        27px;
+
+    border-radius:50px;
+
+    background:#39303f;
+
+    color:white;
+
+    font-size:16px;
+
+    font-weight:bold;
+
+    transition:
+        left .12s ease,
+        top .12s ease;
+
+}
+
+
+/* =====================================================
+   PHOTO
+===================================================== */
+
+.photoFrame{
+
+    width:
+        min(
+            440px,
+            88vw
+        );
+
+    margin:
+        0 auto 20px;
+
+    position:relative;
+
+}
+
+
+.photoFrame img{
+
+    width:100%;
+
+    display:block;
+
+    max-height:58vh;
+
+    object-fit:contain;
+
+    border-radius:24px;
+
+    border:
+        5px solid
+        rgba(255,255,255,.94);
+
+    box-shadow:
+
+        0 0 25px
+        rgba(255,255,255,.08),
+
+        0 0 60px
+        rgba(183,75,255,.30);
+
+    transform:
+        rotate(-1deg);
+
+    transition:.3s;
+
+}
+
+
+.photoFrame img:hover{
+
+    transform:
+        rotate(0deg)
+        scale(1.02);
+
+}
+
+
+/* =====================================================
+   PHOTO TITLE
+===================================================== */
+
+.photoTitle{
+
+    font-size:26px;
+
+    font-weight:bold;
+
+    margin-bottom:13px;
+
+}
+
+
+.photoQuote{
+
+    max-width:650px;
+
+    margin:
+        15px auto
+        24px;
+
+    font-size:19px;
+
+    line-height:1.55;
+
+}
+
+
+/* =====================================================
+   STICKERS
+===================================================== */
+
+.sticker{
+
+    position:absolute;
+
+    padding:
+        7px
+        12px;
+
+    border-radius:15px;
+
+    background:white;
+
+    color:#29122f;
+
+    font-size:12px;
+
+    font-weight:bold;
+
+    box-shadow:
+        0 5px 15px
+        rgba(0,0,0,.25);
+
+    z-index:5;
+
+}
+
+
+.sticker.left{
+
+    top:17px;
+
+    left:-17px;
+
+    transform:rotate(-9deg);
+
+}
+
+
+.sticker.right{
+
+    bottom:20px;
+
+    right:-17px;
+
+    transform:rotate(8deg);
+
+}
+
+
+/* =====================================================
+   LETTER
+===================================================== */
+
+.letter{
+
+    text-align:left;
+
+    background:
+        rgba(255,255,255,.055);
+
+    border:
+        1px solid
+        rgba(255,255,255,.12);
+
+    border-radius:23px;
+
+    padding:25px;
+
+}
+
+
+.letterTitle{
+
+    text-align:center;
+
+    color:#e09aff;
+
+    font-size:25px;
+
+    margin-bottom:19px;
+
+}
+
+
+.letter p{
+
+    margin-bottom:14px;
+
+}
+
+
+.signature{
+
+    text-align:right;
+
+    font-size:18px;
+
+    margin-top:23px;
+
+}
+
+
+/* =====================================================
+   DATE
+===================================================== */
+
+.date{
+
+    font-size:13px;
+
+    letter-spacing:4px;
+
+    opacity:.7;
+
+    margin-bottom:8px;
+
+}
+
+
+/* =====================================================
+   PAGE COUNTER
+===================================================== */
+
+.pageCounter{
+
+    position:fixed;
+
+    top:14px;
+
+    right:16px;
+
+    z-index:100;
+
+    padding:
+        8px
+        14px;
+
+    border-radius:30px;
+
+    background:
+        rgba(255,255,255,.09);
+
+    border:
+        1px solid
+        rgba(255,255,255,.13);
+
+    font-size:12px;
+
+}
+
+
+/* =====================================================
+   NAVIGATION DOTS
+===================================================== */
+
+.nav{
+
+    position:fixed;
+
+    bottom:16px;
+
+    left:50%;
+
+    transform:
+        translateX(-50%);
+
+    z-index:100;
+
+    display:flex;
+
+    gap:6px;
+
+}
+
+
+.dot{
+
+    width:7px;
+
+    height:7px;
+
+    border-radius:50%;
+
+    background:
+        rgba(255,255,255,.25);
+
+    transition:.3s;
+
+}
+
+
+.dot.active{
+
+    width:24px;
+
+    background:white;
+
+    box-shadow:
+        0 0 10px white;
+
+}
+
+
+/* =====================================================
+   FLOATING HEARTS
+===================================================== */
+
+.heart{
+
+    position:fixed;
+
+    bottom:-30px;
+
+    color:white;
+
+    pointer-events:none;
+
+    z-index:20;
+
+    animation:
+        floatHeart
+        linear
+        forwards;
+
+}
+
+
+@keyframes floatHeart{
+
+    0%{
+
+        transform:
+            translateY(0)
+            rotate(0deg);
+
+        opacity:0;
+
+    }
+
+    15%{
+        opacity:.9;
+    }
+
+    100%{
+
+        transform:
+            translateY(-110vh)
+            rotate(360deg);
+
+        opacity:0;
+
+    }
+
+}
+
+
+/* =====================================================
+   STARS
+===================================================== */
+
+.star{
+
+    position:fixed;
+
+    color:white;
+
+    opacity:.55;
+
+    pointer-events:none;
+
+    z-index:1;
+
+    animation:
+        twinkle
+        2s
+        ease-in-out
+        infinite
+        alternate;
+
+}
+
+
+@keyframes twinkle{
+
+    from{
+
+        opacity:.15;
+
+        transform:
+            scale(.7);
+
+    }
+
+    to{
+
+        opacity:.95;
+
+        transform:
+            scale(1.25);
+
+    }
+
+}
+
+
+/* =====================================================
+   CONFETTI
+===================================================== */
+
+.confetti{
+
+    position:fixed;
+
+    top:-20px;
+
+    width:8px;
+
+    height:14px;
+
+    z-index:500;
+
+    pointer-events:none;
+
+    animation:
+        fall
+        linear
+        forwards;
+
+}
+
+
+@keyframes fall{
+
+    to{
+
+        transform:
+            translateY(110vh)
+            rotate(720deg);
+
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width:600px){
+
+    .page{
+        padding:10px;
+    }
+
+
+    .card{
+
+        max-height:90vh;
+
+        padding:
+            27px
+            17px;
+
+        border-radius:25px;
+
+    }
+
+
+    h1{
+        font-size:44px;
+    }
+
+
+    h2{
+        font-size:29px;
+    }
+
+
+    p{
+        font-size:16px;
+    }
+
+
+    .question{
+        font-size:27px;
+    }
+
+
+    .buttons{
+        gap:15px;
+    }
+
+
+    .yesBtn,
+    .noBtn{
+
+        padding:
+            12px
+            20px;
+
+        font-size:14px;
+
+    }
+
+
+    .startBtn,
+    .nextBtn{
+
+        padding:
+            12px
+            21px;
+
+        font-size:14px;
+
+    }
+
+
+    .photoFrame{
+
+        width:
+            min(
+                350px,
+                87vw
+            );
+
+    }
+
+
+    .photoFrame img{
+
+        max-height:47vh;
+
+    }
+
+
+    .photoTitle{
+
+        font-size:23px;
+
+    }
+
+
+    .photoQuote{
+
+        font-size:17px;
+
+    }
+
+
+    .sticker{
+
+        font-size:10px;
+
+        padding:
+            6px
+            9px;
+
+    }
+
+
+    .letter{
+
+        padding:18px;
+
+    }
+
+
+    .letter p{
+
+        font-size:14px;
+
+        line-height:1.55;
+
+    }
+
+
+    .letterTitle{
+
+        font-size:21px;
+
+    }
+
+
+    .signature{
+
+        font-size:14px;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div id="app">
+
+
+<!-- =====================================================
+     PAGE COUNTER
+===================================================== -->
+
+<div class="pageCounter">
+
+    <span id="pageNumber">
+        1
+    </span>
+
+    / 7
+
+</div>
+
+
+<!-- =====================================================
+     PAGE 1
+===================================================== -->
+
+<section
+    class="page active"
+    id="page1"
+>
+
+<div class="card">
+
+    <div class="small">
+        Just a little question...
+    </div>
+
+
+    <h1 class="glow">
+
+        Hey
+
+        <span class="purple">
+            Shree
+        </span>
+
+        🤍
+
+    </h1>
+
+
+    <div class="questionNumber">
+        FRIENDSHIP TEST • 01
+    </div>
+
+
+    <div class="question">
+
+        Do you think I'm
+        your best friend? 👀
+
+    </div>
+
+
+    <div class="buttons">
+
+        <button
+            class="yesBtn"
+            onclick="yesNext()"
+        >
+
+            YES 🤍
+
+        </button>
+
+
+        <button
+            class="noBtn"
+            id="no1"
+        >
+
+            NO 😌
+
+        </button>
+
+    </div>
+
+
+    <p
+        class="pink"
+        style="margin-top:24px;"
+    >
+
+        Be careful...
+
+        <br>
+
+        there is only one correct answer. 😌
+
+    </p>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     PAGE 2 — NEW QUESTION
+===================================================== -->
+
+<section
+    class="page"
+    id="page2"
+>
+
+<div class="card">
+
+    <div class="small">
+        Okay... one more thing 👀
+    </div>
+
+
+    <div class="questionNumber">
+        FRIENDSHIP TEST • 02
+    </div>
+
+
+    <div class="question">
+
+        Would you still be my friend<br>if I became 10× more annoying? 👀
+
+    </div>
+
+
+    <div class="buttons">
+
+        <button
+            class="yesBtn"
+            onclick="yesNext()"
+        >
+
+            YES 🤍
+
+        </button>
+
+
+        <button
+            class="noBtn"
+            id="no2"
+        >
+
+            NO 😭
+
+        </button>
+
+    </div>
+
+
+    <p
+        class="pink"
+        style="margin-top:24px;"
+    >
+
+        Be honest, Shree... 😌
+
+    </p>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     PAGE 3 — ROSE PHOTO
+===================================================== -->
+
+<section
+    class="page"
+    id="page3"
+>
+
+<div class="card">
+
+    <div class="small">
+        A little admiration 🌹
+    </div>
+
+
+    <div class="photoTitle">
+
+        A little something that
+        reminded me of you 🤍
+
+    </div>
+
+
+    <div class="photoFrame">
+
+        <!-- PHOTO 1 = LAMP + FLOWER -->
+
+        <img
+            src="image/1.jpeg"
+            alt="Lamp and flower photo"
+        >
+
+
+        <div class="sticker left">
+
+            just for Shree 🤍
+
+        </div>
+
+
+        <div class="sticker right">
+
+            little favourite 🌹
+
+        </div>
+
+    </div>
+
+
+    <div class="photoQuote">
+
+        "Some moments don't need
+        to be loud to be beautiful." ✨
+
+        <br>
+
+        "They simply make a memory
+        a little brighter." 🤍
+
+    </div>
+
+
+    <button
+        class="nextBtn"
+        onclick="nextPage()"
+    >
+
+        Next →
+
+    </button>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     PAGE 4 — FIT CHECK PHOTO
+===================================================== -->
+
+<section
+    class="page"
+    id="page4"
+>
+
+<div class="card">
+
+    <div class="small">
+        Okay... now the cringe part 😂
+    </div>
+
+
+    <div class="photoTitle">
+
+        Fit Check 😌
+
+    </div>
+
+
+    <div class="photoFrame">
+
+        <!-- PHOTO 2 = BROWN SHIRT -->
+
+        <img
+            src="image/2.jpeg"
+            alt="Brown shirt photo"
+        >
+
+
+        <div class="sticker left">
+
+            fit check 👀
+
+        </div>
+
+
+        <div class="sticker right">
+
+            okay handsome 😂
+
+        </div>
+
+    </div>
+
+
+    <div class="photoQuote">
+
+        "The outfit is doing its job...
+
+        <br>
+
+        but honestly,
+        you already knew you looked good." 😌🤍
+
+    </div>
+
+
+    <button
+        class="nextBtn"
+        onclick="nextPage()"
+    >
+
+        Keep going →
+
+    </button>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     PAGE 5 — BIRTHDAY LETTER
+===================================================== -->
+
+<section
+    class="page"
+    id="page5"
+>
+
+<div class="card">
+
+    <div class="small">
+        A birthday note 🤍
+    </div>
+
+
+    <h2>
+
+        Happy Birthday,
+
+        <br>
+
+        <span class="purple">
+            Shree
+        </span>
+
+        🎂
+
+    </h2>
+
+
+    <div class="letter">
+
+
+        <div class="letterTitle">
+
+            A little letter 🤍
+
+        </div>
+
+
+        <p>
+
+            Dear Shree Ganesh,
+
+        </p>
+
+
+        <p>
+
+            I hope your 21st year brings you
+            the kind of happiness that stays,
+            the kind of laughter that hurts your
+            cheeks, and memories that we'll still
+            talk about years from now.
+
+        </p>
+
+
+        <p>
+
+            Keep being funny, caring, irritating,
+            supportive and completely yourself. 😂
+
+        </p>
+
+
+        <p>
+
+            Life will change, people will change,
+            but I hope our silly little memories
+            keep finding their way back to us.
+
+        </p>
+
+
+        <p>
+
+            And yes...
+            I will continue calling you
+            cutey and chellowww. 😭🤍
+
+        </p>
+
+
+        <p>
+
+            Somehow you became one of those people
+            who can make normal moments feel
+            a little more special.
+
+        </p>
+
+
+        <p>
+
+            So here's to more random talks,
+            more silly memories,
+            more teasing and many more birthdays
+            to celebrate together. 🤍
+
+        </p>
+
+
+        <p>
+
+            Stay exactly this funny, caring,
+            slightly dramatic and wonderfully
+            annoying person. 😂
+
+        </p>
+
+
+        <div class="signature">
+
+            With lots of teasing
+            & a little bit of love 😌
+
+            <br><br>
+
+            — Your favourite troublemaker 🤍
+
+        </div>
+
+
+    </div>
+
+
+    <br>
+
+
+    <button
+        class="nextBtn"
+        onclick="nextPage()"
+    >
+
+        Two more memories... →
+
+    </button>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     PAGE 6 — MIRROR PHOTO
+===================================================== -->
+
+<section
+    class="page"
+    id="page6"
+>
+
+<div class="card">
+
+    <div class="small">
+
+        One of my favourite memories 🤍
+
+    </div>
+
+
+    <div class="photoTitle">
+
+        No Perfect Pose 🪞
+
+    </div>
+
+
+    <div class="photoFrame">
+
+        <!-- PHOTO 3 = MIRROR -->
+
+        <img
+            src="image/3.jpeg"
+            alt="Mirror photo"
+        >
+
+
+        <div class="sticker left">
+
+            mirror moment 🪞
+
+        </div>
+
+
+        <div class="sticker right">
+
+            real memory 🤍
+
+        </div>
+
+    </div>
+
+
+    <div class="photoQuote">
+
+        "No perfect pose,
+        no perfect plan,
+
+        <br>
+
+        just a memory worth
+        keeping." 🤍
+
+    </div>
+
+
+    <button
+        class="nextBtn"
+        onclick="nextPage()"
+    >
+
+        Last memory →
+
+    </button>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     PAGE 7 — ICE CREAM HEART
+===================================================== -->
+
+<section
+    class="page"
+    id="page7"
+>
+
+<div class="card">
+
+    <div class="small">
+
+        The last little memory 🤍
+
+    </div>
+
+
+    <div class="photoTitle">
+
+        A Tiny Heart,
+        A Big Memory 🫶
+
+    </div>
+
+
+    <div class="photoFrame">
+
+        <!-- PHOTO 4 = ICE CREAM STICKS -->
+
+        <img
+            src="image/4.jpeg"
+            alt="Ice cream sticks forming a heart"
+        >
+
+
+        <div class="sticker left">
+
+            special 🤍
+
+        </div>
+
+
+        <div class="sticker right">
+
+            favourite memory 🥹
+
+        </div>
+
+    </div>
+
+
+    <div class="photoQuote">
+
+        "Some memories don't need
+        a caption,
+
+        <br>
+
+        they just need a smile
+        when you look back at them." 🤍
+
+    </div>
+
+
+    <div
+        class="letter"
+        style="
+            text-align:center;
+            margin-top:25px;
+        "
+    >
+
+
+        <div class="date">
+
+            20 • 09 • 2004 • 21 YEARS
+
+        </div>
+
+
+        <h2>
+
+            Happy 21st Birthday,
+
+            <br>
+
+            <span class="purple">
+
+                Shree Ganesh
+
+            </span>
+
+            🎂🤍
+
+        </h2>
+
+
+        <p>
+
+            Here's to more laughter,
+            more crazy memories,
+            more random conversations,
+            and many more moments
+            worth keeping.
+
+        </p>
+
+
+        <br>
+
+
+        <p class="pink">
+
+            Stay happy.
+
+            <br>
+
+            Stay crazy.
+
+            <br>
+
+            Stay Sweetuu. 🤍
+
+        </p>
+
+
+        <br>
+
+
+        <p>
+
+            And yes...
+
+            <br>
+
+            you're stuck with
+            your favourite troublemaker. 😂
+
+        </p>
+
+
+        <br>
+
+
+        <button
+            class="startBtn"
+            onclick="birthdayMagic()"
+        >
+
+            🎉 Birthday Magic 🎉
+
+        </button>
+
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     NAVIGATION DOTS
+===================================================== -->
+
+<div class="nav">
+
+    <span class="dot active"></span>
+
+    <span class="dot"></span>
+
+    <span class="dot"></span>
+
+    <span class="dot"></span>
+
+    <span class="dot"></span>
+
+    <span class="dot"></span>
+
+    <span class="dot"></span>
+
+</div>
+
+
+</div>
+
+
+<script>
+
+
+/* =====================================================
+   CURRENT PAGE
+===================================================== */
+
+let currentPage = 1;
+
+
+/* =====================================================
+   SHOW PAGE
+===================================================== */
+
+function showPage(number){
+
+    document
+        .querySelectorAll(".page")
+        .forEach(function(page){
+
+            page.classList.remove("active");
+
+        });
+
+
+    const selectedPage =
+        document.getElementById(
+            "page" + number
+        );
+
+
+    if(selectedPage){
+
+        selectedPage.classList.add("active");
+
+    }
+
+
+    currentPage = number;
+
+
+    document.getElementById(
+        "pageNumber"
+    ).textContent =
+        currentPage;
+
+
+    document
+        .querySelectorAll(".dot")
+        .forEach(function(dot,index){
+
+            dot.classList.toggle(
+                "active",
+                index === currentPage - 1
+            );
+
+        });
+
+}
+
+
+/* =====================================================
+   NEXT PAGE
+===================================================== */
+
+function nextPage(){
+
+    if(currentPage < 7){
+
+        showPage(
+            currentPage + 1
+        );
+
+    }
+
+}
+
+
+/* =====================================================
+   YES BUTTON
+===================================================== */
+
+function yesNext(){
+
+    createMiniConfetti();
+
+
+    setTimeout(function(){
+
+        nextPage();
+
+    },500);
+
+}
+
+
+/* =====================================================
+   RUNNING NO BUTTON
+===================================================== */
+
+function makeNoRun(id){
+
+    const button =
+        document.getElementById(id);
+
+
+    if(!button){
+
+        return;
+
+    }
+
+
+    function moveButton(){
+
+        const margin = 12;
+
+
+        const maxX =
+            window.innerWidth -
+            button.offsetWidth -
+            margin;
+
+
+        const maxY =
+            window.innerHeight -
+            button.offsetHeight -
+            margin;
+
+
+        const randomX =
+            margin +
+            Math.random() *
+            Math.max(
+                1,
+                maxX - margin
+            );
+
+
+        const randomY =
+            margin +
+            Math.random() *
+            Math.max(
+                1,
+                maxY - margin
+            );
+
+
+        button.style.position =
+            "fixed";
+
+
+        button.style.left =
+            randomX + "px";
+
+
+        button.style.top =
+            randomY + "px";
+
+
+        button.style.zIndex =
+            "999";
+
+
+        const words = [
+
+            "NO 😭",
+
+            "Catch me 😂",
+
+            "Nope 🤭",
+
+            "Try again 😭",
+
+            "Too slow 😌",
+
+            "Still NO 😂"
+
+        ];
+
+
+        button.textContent =
+            words[
+                Math.floor(
+                    Math.random() *
+                    words.length
+                )
+            ];
+
+    }
+
+
+    /* Desktop */
+
+    button.addEventListener(
+        "mouseenter",
+        moveButton
+    );
+
+
+    /* Mobile */
+
+    button.addEventListener(
+        "touchstart",
+        function(event){
+
+            event.preventDefault();
+
+            moveButton();
+
+        }
+    );
+
+
+    /* Click */
+
+    button.addEventListener(
+        "click",
+        function(event){
+
+            event.preventDefault();
+
+            moveButton();
+
+        }
+    );
+
+}
+
+
+/* =====================================================
+   START NO BUTTONS
+===================================================== */
+
+makeNoRun("no1");
+
+makeNoRun("no2");
+
+
+/* =====================================================
+   FLOATING WHITE HEARTS
+===================================================== */
+
+function createHeart(){
+
+    const heart =
+        document.createElement(
+            "div"
+        );
+
+
+    heart.className =
+        "heart";
+
+
+    const symbols = [
+
+        "♡",
+
+        "♥",
+
+        "🤍",
+
+        "✦",
+
+        "✧"
+
+    ];
+
+
+    heart.textContent =
+        symbols[
+            Math.floor(
+                Math.random() *
+                symbols.length
+            )
+        ];
+
+
+    heart.style.left =
+        Math.random() *
+        100 +
+        "vw";
+
+
+    heart.style.fontSize =
+        (
+            12 +
+            Math.random() *
+            22
+        ) +
+        "px";
+
+
+    heart.style.animationDuration =
+        (
+            5 +
+            Math.random() *
+            6
+        ) +
+        "s";
+
+
+    document.body.appendChild(
+        heart
+    );
+
+
+    setTimeout(function(){
+
+        heart.remove();
+
+    },12000);
+
+}
+
+
+setInterval(
+    createHeart,
+    450
+);
+
+
+/* =====================================================
+   STARS
+===================================================== */
+
+function createStars(){
+
+    for(
+        let i = 0;
+        i < 35;
+        i++
+    ){
+
+        const star =
+            document.createElement(
+                "div"
+            );
+
+
+        star.className =
+            "star";
+
+
+        star.textContent =
+            Math.random() > .5
+            ? "✦"
+            : "✧";
+
+
+        star.style.left =
+            Math.random() *
+            100 +
+            "vw";
+
+
+        star.style.top =
+            Math.random() *
+            100 +
+            "vh";
+
+
+        star.style.fontSize =
+            (
+                8 +
+                Math.random() *
+                15
+            ) +
+            "px";
+
+
+        star.style.animationDelay =
+            Math.random() *
+            3 +
+            "s";
+
+
+        document.body.appendChild(
+            star
+        );
+
+    }
+
+}
+
+
+createStars();
+
+
+/* =====================================================
+   MINI CONFETTI
+===================================================== */
+
+function createMiniConfetti(){
+
+    for(
+        let i = 0;
+        i < 30;
+        i++
+    ){
+
+        const piece =
+            document.createElement(
+                "div"
+            );
+
+
+        piece.className =
+            "confetti";
+
+
+        piece.style.left =
+            Math.random() *
+            100 +
+            "vw";
+
+
+        piece.style.animationDuration =
+            (
+                1.5 +
+                Math.random() * 2
+            ) +
+            "s";
+
+
+        document.body.appendChild(
+            piece
+        );
+
+
+        setTimeout(function(){
+
+            piece.remove();
+
+        },4000);
+
+    }
+
+}
+
+
+/* =====================================================
+   FINAL BIRTHDAY MAGIC
+===================================================== */
+
+function birthdayMagic(){
+
+
+    /* BIG CONFETTI */
+
+    for(
+        let i = 0;
+        i < 150;
+        i++
+    ){
+
+        const piece =
+            document.createElement(
+                "div"
+            );
+
+
+        piece.className =
+            "confetti";
+
+
+        piece.style.left =
+            Math.random() *
+            100 +
+            "vw";
+
+
+        piece.style.animationDuration =
+            (
+                2 +
+                Math.random() * 4
+            ) +
+            "s";
+
+
+        piece.style.animationDelay =
+            Math.random() *
+            1.5 +
+            "s";
+
+
+        document.body.appendChild(
+            piece
+        );
+
+
+        setTimeout(function(){
+
+            piece.remove();
+
+        },7500);
+
+    }
+
+
+    /* HEARTS */
+
+    for(
+        let i = 0;
+        i < 70;
+        i++
+    ){
+
+        setTimeout(function(){
+
+            createHeart();
+
+        },i * 35);
+
+    }
+
+
+    /* FINAL MESSAGE */
+
+    setTimeout(function(){
+
+        alert(
+
+            "🎂 HAPPY 21ST BIRTHDAY SHREE! 🤍\n\n" +
+
+            "Stay happy.\n" +
+
+            "Stay crazy.\n" +
+
+            "Stay Sweetuu. 🫶\n\n" +
+
+            "And remember...\n" +
+
+            "your favourite troublemaker\n" +
+
+            "isn't going anywhere. 😂🤍"
+
+        );
+
+    },900);
+
+}
+
+
+/* =====================================================
+   ARROW KEY
+===================================================== */
+
+document.addEventListener(
+    "keydown",
+    function(event){
+
+        if(
+            event.key === "ArrowRight"
+        ){
+
+            nextPage();
+
+        }
+
+    }
+);
+
+</script>
+
+
+</body>
+
+</html>
